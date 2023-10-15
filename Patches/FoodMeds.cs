@@ -34,7 +34,7 @@ namespace Gaylatea
 
             protected override MethodBase GetTargetMethod()
             {
-                _playerActionClassType = PatchConstants.EftTypes.Single(x => x.GetMethod("GetAvailableActions") != null);
+                _playerActionClassType = PatchConstants.EftTypes.Single(x => x.GetMethods().Where(method => method.Name == "GetAvailableActions").Count() > 0);
                 _menuClassType = PatchConstants.EftTypes.Single(x => x.GetMethod("SelectNextAction") != null);
                 _menuItemClassType = PatchConstants.EftTypes.Single(x => x.GetField("TargetName") != null && x.GetField("Disabled") != null);
                 _stringLocalizeType = PatchConstants.EftTypes.Single(x => x.GetMethod("LocalizeAreaName") != null);
