@@ -3,8 +3,8 @@ using System.Reflection;
 using System.Linq;
 using System.Collections;
 
-using Aki.Reflection.Patching;
-using Aki.Reflection.Utils;
+using SPT.Reflection.Patching;
+using SPT.Reflection.Utils;
 
 using EFT.InventoryLogic;
 using EFT;

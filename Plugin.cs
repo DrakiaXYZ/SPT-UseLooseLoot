@@ -1,12 +1,12 @@
 using BepInEx;
-using BepInEx.Configuration;
 using BepInEx.Logging;
 
 namespace Gaylatea
 {
     namespace UseLooseLoot
     {
-        [BepInPlugin("com.gaylatea.uselooseloot", "SPT-UseLooseLoot", "1.1.2")]
+        [BepInPlugin("com.gaylatea.uselooseloot", "SPT-UseLooseLoot", "1.2.0")]
+        [BepInDependency("com.SPT.core", "3.9.0")]
         public class Plugin : BaseUnityPlugin
         {
             internal static ManualLogSource logger;
