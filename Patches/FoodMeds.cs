@@ -61,7 +61,7 @@ namespace Gaylatea
             [PatchPostfix]
             public static void PatchPostfix(ref object __result, Item rootItem, GamePlayerOwner owner)
             {
-                if(!(rootItem is MedsClass) && !(rootItem is FoodClass)) {
+                if(!(rootItem is MedsItemClass) && !(rootItem is FoodDrinkItemClass)) {
                     return;
                 }
 

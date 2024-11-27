@@ -3,12 +3,17 @@
   <PropertyGroup>
     <TargetFramework>net471</TargetFramework>
     <AssemblyName>Gaylatea-UseLooseLoot</AssemblyName>
-    <Copyright>© 2023 Aria Adair</Copyright>
-    <FileVersion>1.2.0</FileVersion>
-    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <Copyright>© 2024 Aria Adair</Copyright>
+    <FileVersion>1.3.0</FileVersion>
+    <AssemblyVersion>1.3.0</AssemblyVersion>
+    <Configurations>Debug;Release;Package</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Package|AnyCPU'">
     <Optimize>False</Optimize>
   </PropertyGroup>
 
@@ -57,7 +62,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)\..\..\BepInEx\plugins\$(TargetFileName)&quot;" />
+    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)\..\..\BepInEx\plugins\$(TargetFileName)&quot;&#xD;&#xA;&#xD;&#xA;if $(ConfigurationName) == Package (&#xD;&#xA;    powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File $(ProjectDir)\package.ps1&#xD;&#xA;)" />
   </Target>
 
 </Project>
