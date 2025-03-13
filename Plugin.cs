@@ -5,8 +5,8 @@ namespace Gaylatea
 {
     namespace UseLooseLoot
     {
-        [BepInPlugin("com.gaylatea.uselooseloot", "SPT-UseLooseLoot", "1.3.0")]
-        [BepInDependency("com.SPT.core", "3.10.0")]
+        [BepInPlugin("com.gaylatea.uselooseloot", "SPT-UseLooseLoot", "1.4.0")]
+        [BepInDependency("com.SPT.core", "3.11.0")]
         public class Plugin : BaseUnityPlugin
         {
             internal static ManualLogSource logger;
